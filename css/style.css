@@ -614,6 +614,11 @@
 
   footer a:hover { color: var(--gold); }
 
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
   /* SCROLL ANIMATIONS */
   .fade-in {
     opacity: 0;
