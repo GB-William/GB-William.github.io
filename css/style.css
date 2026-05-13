@@ -97,23 +97,29 @@
     padding-top: 5rem;
   }
 
-  .hero-eyebrow {
+  .available-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(201,168,76,0.08);
+    color: var(--gold);
+    border: 0.5px solid rgba(201,168,76,0.3);
+    padding: 0.4rem 1.2rem;
     font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1.8rem;
+    font-family: var(--sans);
+  }
+
+  .hero-subtitle {
+    font-size: 13px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 1.2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-  }
-
-  .hero-eyebrow::before {
-    content: '';
-    display: inline-block;
-    width: 32px;
-    height: 0.5px;
-    background: var(--gold);
+    margin-bottom: 1.5rem;
+    font-family: var(--sans);
+    margin-top: -0.8rem;
   }
 
   .hero h1 {
@@ -184,94 +190,32 @@
     justify-content: center;
   }
 
-  .hero-photo-frame {
-    width: 340px;
-    height: 420px;
-    position: relative;
-  }
-
-  .hero-photo-bg {
-    position: absolute;
-    top: 16px; left: 16px;
-    right: -16px; bottom: -16px;
-    border: 0.5px solid rgba(201,168,76,0.25);
-  }
-
-  .hero-photo-placeholder {
-    width: 100%;
-    height: 100%;
+  .hero-photo-circle {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
     background: var(--dark-3);
-    border: 0.5px solid rgba(201,168,76,0.15);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
-    position: relative;
-    z-index: 1;
     overflow: hidden;
+    box-shadow: 0 0 50px rgba(201,168,76,0.1);
   }
 
-  .hero-photo-placeholder img {
+  .hero-photo-circle img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: none; /* Remplacer par display:block quand vous ajoutez votre photo */
+    display: block;
   }
 
-  .avatar-circle {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background: var(--dark-2);
-    border: 1.5px solid var(--gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .hero-photo-initials {
     font-family: var(--serif);
-    font-size: 1.8rem;
+    font-size: 3.5rem;
     color: var(--gold);
-  }
-
-  .photo-label {
-    font-size: 11px;
-    color: var(--text-muted);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-
-  .hero-langs {
-    position: absolute;
-    bottom: -1.5rem;
-    right: -2rem;
-    background: var(--dark-2);
-    border: 0.5px solid rgba(201,168,76,0.2);
-    padding: 1rem 1.3rem;
-    z-index: 2;
-  }
-
-  .hero-langs p {
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.6rem;
-  }
-
-  .lang-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 12px;
-    color: var(--text-muted);
-    margin-bottom: 3px;
-  }
-
-  .lang-dot {
-    width: 5px; height: 5px;
-    border-radius: 50%;
-    background: var(--gold);
-    opacity: 0.6;
+    opacity: 0.45;
+    user-select: none;
   }
 
   /* SECTION BASE */
