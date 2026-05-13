@@ -404,23 +404,6 @@
     font-family: var(--sans);
   }
 
-  .project-link {
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--gold);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .project-link::after {
-    content: '→';
-    transition: transform 0.2s;
-  }
-
-  .project-card:hover .project-link::after { transform: translateX(4px); }
 
   /* TIMELINE */
   .xp-section { background: var(--dark-2); }
