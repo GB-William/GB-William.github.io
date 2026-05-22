@@ -63,6 +63,40 @@
 
   .nav-links a:hover { color: var(--gold); }
 
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: transparent;
+    border: 0.5px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+  }
+
+  .lang-opt {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    transition: color 0.2s;
+  }
+
+  .lang-opt.active { color: var(--gold); }
+
+  .lang-sep {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.2);
+  }
+
+  .lang-toggle:hover .lang-opt:not(.active) { color: var(--text); }
+
   .nav-burger {
     display: none;
     flex-direction: column;
@@ -503,7 +537,7 @@
     margin-bottom: 1.5rem;
   }
 
-  .contact-heading span { color: var(--gold); }
+  .contact-heading .heading-accent { color: var(--gold); }
 
   .contact-intro {
     font-size: 14px;

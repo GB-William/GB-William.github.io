@@ -23,37 +23,44 @@
 <nav>
   <div class="nav-logo">W. Stevens</div>
   <ul class="nav-links">
-    <li><a href="#about">À propos</a></li>
-    <li><a href="#skills">Compétences</a></li>
-    <li><a href="#projects">Projets</a></li>
-    <li><a href="#xp">Expérience</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about" data-i18n="nav.about">À propos</a></li>
+    <li><a href="#skills" data-i18n="nav.skills">Compétences</a></li>
+    <li><a href="#projects" data-i18n="nav.projects">Projets</a></li>
+    <li><a href="#xp" data-i18n="nav.experience">Expérience</a></li>
+    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
   </ul>
-  <button class="nav-burger" aria-label="Menu" aria-expanded="false">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
+  <div class="nav-right">
+    <button class="lang-toggle" aria-label="Switch language">
+      <span class="lang-opt" data-lang="fr">FR</span>
+      <span class="lang-sep">/</span>
+      <span class="lang-opt" data-lang="en">EN</span>
+    </button>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
 </nav>
 
 <!-- HERO -->
 <div class="hero" id="about">
   <div class="hero-grid">
     <div class="hero-content">
-      <div class="available-badge">● DISPONIBLE ALTERNANCE 2026→2028</div>
+      <div class="available-badge" data-i18n="hero.badge">● DISPONIBLE ALTERNANCE 2026→2028</div>
       <h1>William <span>Stevens</span></h1>
-      <div class="hero-subtitle">Développeur Full Stack</div>
-      <p class="hero-desc">
+      <div class="hero-subtitle" data-i18n="hero.subtitle">Développeur Full Stack</div>
+      <p class="hero-desc" data-i18n="hero.desc">
         Étudiant en Bachelor Développement Informatique à Metz Numeric School,
         je conçois des outils web métier avec PHP, MariaDB, Docker et JavaScript.
       </p>
       <div class="hero-ctas">
-        <a href="#projects" class="btn-primary">Voir mes projets</a>
-        <a href="#contact" class="btn-outline">Me contacter</a>
+        <a href="#projects" class="btn-primary" data-i18n="hero.cta1">Voir mes projets</a>
+        <a href="#contact" class="btn-outline" data-i18n="hero.cta2">Me contacter</a>
       </div>
       <div class="hero-cv">
-        <a href="CV-William_Stevens.pdf" download class="btn-cv">CV Français ↓</a>
-        <a href="CV-William_Stevens_EN_1.pdf" download class="btn-cv">CV English ↓</a>
+        <a href="CV-William_Stevens.pdf" download class="btn-cv" data-i18n="hero.cvFr">CV Français ↓</a>
+        <a href="CV-William_Stevens_EN_1.pdf" download class="btn-cv" data-i18n="hero.cvEn">CV English ↓</a>
       </div>
     </div>
 
@@ -68,8 +75,8 @@
 <!-- SKILLS -->
 <div class="skills-section" id="skills">
   <section>
-    <div class="section-label">Compétences</div>
-    <h2 class="section-title">Stack technique</h2>
+    <div class="section-label" data-i18n="skills.label">Compétences</div>
+    <h2 class="section-title" data-i18n="skills.title">Stack technique</h2>
     <div class="skills-categories">
       <div class="skill-category fade-in">
         <div class="skill-category-label">Backend</div>
@@ -87,7 +94,7 @@
         </div>
       </div>
       <div class="skill-category fade-in" style="transition-delay:0.2s">
-        <div class="skill-category-label">Outils</div>
+        <div class="skill-category-label" data-i18n="skills.tools">Outils</div>
         <div class="skill-pills">
           <span class="skill-pill">Docker</span>
           <span class="skill-pill">Git</span>
@@ -99,8 +106,8 @@
 
 <!-- PROJECTS -->
 <section id="projects">
-  <div class="section-label">Projets</div>
-  <h2 class="section-title">Ce que j'ai réalisé</h2>
+  <div class="section-label" data-i18n="projects.label">Projets</div>
+  <h2 class="section-title" data-i18n="projects.title">Ce que j'ai réalisé</h2>
   <div class="projects-grid">
     <div class="project-card fade-in">
       <div class="project-number">01</div>
@@ -110,9 +117,9 @@
         <span class="tag">Docker</span>
         <span class="tag">JavaScript</span>
       </div>
-      <h3 class="project-title">Gestion du courrier</h3>
-      <p class="project-desc">Application web complète de gestion du courrier entrant et sortant. Déployée en production sur NAS Synology.</p>
-      <span class="project-client">Mairie de Longeville-lès-Metz — Stage</span>
+      <h3 class="project-title" data-i18n="projects.p1.title">Gestion du courrier</h3>
+      <p class="project-desc" data-i18n="projects.p1.desc">Application web complète de gestion du courrier entrant et sortant. Déployée en production sur NAS Synology.</p>
+      <span class="project-client" data-i18n="projects.p1.client">Mairie de Longeville-lès-Metz — Stage</span>
     </div>
 
     <div class="project-card fade-in" style="transition-delay:0.1s">
@@ -123,9 +130,9 @@
         <span class="tag">Docker</span>
         <span class="tag">JS OOP</span>
       </div>
-      <h3 class="project-title">Module Congés</h3>
-      <p class="project-desc">Calendrier interactif (FullCalendar) avec gestion des conflits inter-services et validation hiérarchique des demandes.</p>
-      <span class="project-client">Mairie de Longeville-lès-Metz — Stage</span>
+      <h3 class="project-title" data-i18n="projects.p2.title">Module Congés</h3>
+      <p class="project-desc" data-i18n="projects.p2.desc">Calendrier interactif (FullCalendar) avec gestion des conflits inter-services et validation hiérarchique des demandes.</p>
+      <span class="project-client" data-i18n="projects.p2.client">Mairie de Longeville-lès-Metz — Stage</span>
     </div>
   </div>
 </section>
@@ -133,34 +140,34 @@
 <!-- EXPERIENCE / FORMATION -->
 <div class="xp-section" id="xp">
   <section>
-    <div class="section-label">Parcours</div>
-    <h2 class="section-title">Formation & Expériences</h2>
+    <div class="section-label" data-i18n="xp.label">Parcours</div>
+    <h2 class="section-title" data-i18n="xp.title">Formation & Expériences</h2>
     <div class="timeline">
 
       <div class="timeline-item fade-in">
         <div class="timeline-date">2025 → 2028</div>
         <div class="timeline-content">
-          <h4>Bachelor Développement Informatique</h4>
-          <div class="company">Metz Numeric School — Metz</div>
-          <p>Formation full stack : PHP, JavaScript, bases de données relationnelles, Docker et architecture logicielle. En alternance.</p>
+          <h4 data-i18n="xp.item1.title">Bachelor Développement Informatique</h4>
+          <div class="company" data-i18n="xp.item1.company">Metz Numeric School — Metz</div>
+          <p data-i18n="xp.item1.desc">Formation full stack : PHP, JavaScript, bases de données relationnelles, Docker et architecture logicielle. En alternance.</p>
         </div>
       </div>
 
       <div class="timeline-item fade-in" style="transition-delay:0.1s">
         <div class="timeline-date">Printemps 2025</div>
         <div class="timeline-content">
-          <h4>Stage Développeur Web</h4>
-          <div class="company">Mairie de Longeville-lès-Metz</div>
-          <p>Développement de deux applications métier : gestion du courrier et module congés. Stack : PHP · MariaDB · Docker · JavaScript.</p>
+          <h4 data-i18n="xp.item2.title">Stage Développeur Web</h4>
+          <div class="company" data-i18n="xp.item2.company">Mairie de Longeville-lès-Metz</div>
+          <p data-i18n="xp.item2.desc">Développement de deux applications métier : gestion du courrier et module congés. Stack : PHP · MariaDB · Docker · JavaScript.</p>
         </div>
       </div>
 
       <div class="timeline-item fade-in" style="transition-delay:0.2s">
         <div class="timeline-date">2025</div>
         <div class="timeline-content">
-          <h4>Baccalauréat STI2D — Mention Assez Bien</h4>
-          <div class="company">Lycée Louis Vincent — Metz</div>
-          <p>Spécialité Sciences et Technologies de l'Industrie et du Développement Durable.</p>
+          <h4 data-i18n="xp.item3.title">Baccalauréat STI2D — Mention Assez Bien</h4>
+          <div class="company" data-i18n="xp.item3.company">Lycée Louis Vincent — Metz</div>
+          <p data-i18n="xp.item3.desc">Spécialité Sciences et Technologies de l'Industrie et du Développement Durable.</p>
         </div>
       </div>
 
@@ -172,10 +179,10 @@
 <section id="contact">
   <div class="contact-centered">
     <div class="section-label">Contact</div>
-    <h2 class="contact-heading">Travaillons<br><span>ensemble.</span></h2>
+    <h2 class="contact-heading"><span data-i18n="contact.heading1">Travaillons</span><br><span class="heading-accent" data-i18n="contact.heading2">ensemble.</span></h2>
     <p class="contact-intro">
-      Disponible pour une alternance dès septembre 2026.
-      N'hésitez pas à me contacter.
+      <span data-i18n="contact.intro1">Disponible pour une alternance dès septembre 2026.</span><br>
+      <span data-i18n="contact.intro2">N'hésitez pas à me contacter.</span>
     </p>
     <div class="contact-info">
       <div class="contact-item">
@@ -197,7 +204,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">W. Stevens</div>
-  <div>© 2026 William Stevens — Développeur Full Stack</div>
+  <div data-i18n="footer.copy">© 2026 William Stevens — Développeur Full Stack</div>
   <div class="footer-links">
     <a href="https://github.com/GB-William" target="_blank" rel="noopener noreferrer">GitHub</a>
     <a href="https://www.linkedin.com/in/william-stevens-88110a3a6/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
