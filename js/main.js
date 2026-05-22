@@ -47,7 +47,7 @@ const translations = {
     'nav.projects':      'Projects',
     'nav.experience':    'Experience',
     'nav.contact':       'Contact',
-    'hero.badge':        '● AVAILABLE FOR HIRE 2026→2028',
+    'hero.badge':        '● AVAILABLE · WORK-STUDY 2026→2028',
     'hero.subtitle':     'Full Stack Developer',
     'hero.desc':         "Bachelor's student in Software Development at Metz Numeric School, I build business web tools using PHP, MariaDB, Docker and JavaScript.",
     'hero.cta1':         'View my projects',
