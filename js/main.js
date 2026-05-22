@@ -12,7 +12,7 @@ const translations = {
     'hero.cta1':         'Voir mes projets',
     'hero.cta2':         'Me contacter',
     'hero.cvFr':         'CV Français ↓',
-    'hero.cvEn':         'CV English ↓',
+    'hero.cvEn':         'CV Anglais ↓',
     'skills.label':      'Compétences',
     'skills.title':      'Stack technique',
     'skills.tools':      'Outils',
