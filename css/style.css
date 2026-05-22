@@ -244,6 +244,17 @@
 
   .btn-outline:hover { color: var(--gold); border-color: var(--gold); }
 
+  .nav-tool-link {
+    color: var(--gold) !important;
+    border: 0.5px solid rgba(201,168,76,0.35);
+    border-radius: 4px;
+    padding: 0.2rem 0.65rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .nav-tool-link:hover { background: rgba(201,168,76,0.1); border-color: var(--gold); }
+
   .hero-cv {
     display: flex;
     gap: 0.75rem;
@@ -460,6 +471,20 @@
     margin-bottom: 1.2rem;
     font-family: var(--sans);
   }
+
+  .project-link {
+    display: inline-block;
+    font-size: 12px;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    border-bottom: 0.5px solid rgba(201,168,76,0.4);
+    padding-bottom: 1px;
+    transition: opacity 0.2s;
+  }
+  .project-link:hover { opacity: 0.75; }
+
+  #perso { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
 
 
   /* TIMELINE */

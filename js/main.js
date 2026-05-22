@@ -39,6 +39,12 @@ const translations = {
     'contact.heading2':  'ensemble.',
     'contact.intro1':    'Disponible pour une alternance dès septembre 2026.',
     'contact.intro2':    "N'hésitez pas à me contacter.",
+    'perso.label':       'Projets personnels',
+    'perso.title':       'Ce que je construis pour moi',
+    'perso.p1.title':    'Convertisseur Universel',
+    'perso.p1.desc':     'Outil de conversion 100% local (images, documents, vidéos, audio). Aucun upload serveur — tout se passe dans le navigateur.',
+    'perso.p1.link':     'Utiliser l\'outil →',
+    'nav.converter':     'Convertisseur',
     'footer.copy':       '© 2026 William Stevens — Développeur Full Stack',
   },
   en: {
@@ -80,6 +86,12 @@ const translations = {
     'contact.heading2':  'together.',
     'contact.intro1':    'Available for an apprenticeship from September 2026.',
     'contact.intro2':    'Feel free to reach out.',
+    'perso.label':       'Personal Projects',
+    'perso.title':       'What I build for myself',
+    'perso.p1.title':    'Universal Converter',
+    'perso.p1.desc':     '100% local conversion tool (images, documents, video, audio). No server upload — everything runs in the browser.',
+    'perso.p1.link':     'Use the tool →',
+    'nav.converter':     'Converter',
     'footer.copy':       '© 2026 William Stevens — Full Stack Developer',
   }
 };

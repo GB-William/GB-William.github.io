@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convertisseur Universel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="coi-serviceworker.js"></script>
+</head>
+<body>
+
+<header class="header">
+  <a href="../" class="back-link">← Portfolio</a>
+  <div class="logo">Convertisseur<span>.</span></div>
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="light">Light</button>
+    <button class="tab-btn" data-tab="pro">Pro ⚡</button>
+  </nav>
+</header>
+
+<main class="main">
+
+  <!-- ══ PANEL LIGHT ══ -->
+  <div class="panel active" data-panel="light" id="panel-light">
+
+    <div class="drop-zone" id="drop-zone-light">
+      <input type="file" id="file-input-light" accept="*/*">
+      <span class="drop-icon">📂</span>
+      <div class="drop-title">Dépose ton fichier ici</div>
+      <div class="drop-sub">ou clique pour sélectionner — Images, Documents, Données…</div>
+    </div>
+
+    <div class="preview-wrap" id="preview-light"></div>
+
+    <div class="file-info" id="file-info-light">
+      <span class="file-info-icon" id="file-info-icon-light">📄</span>
+      <div>
+        <div class="file-info-name" id="file-info-name-light"></div>
+        <div class="file-info-size" id="file-info-size-light"></div>
+      </div>
+      <button class="file-info-close" id="reset-btn-light" title="Changer de fichier">✕</button>
+    </div>
+
+    <div class="error-msg" id="error-light"></div>
+
+    <div class="formats-section" id="formats-section-light">
+      <div class="formats-title">Convertir en →</div>
+      <div class="formats-grid" id="formats-grid-light"></div>
+    </div>
+
+    <div class="advanced-section" id="advanced-section-light">
+      <div id="advanced-options-light"></div>
+    </div>
+
+    <button class="convert-btn" id="convert-btn-light">Convertir</button>
+
+    <div class="progress-wrap" id="progress-wrap-light">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill-light"></div>
+      </div>
+      <div class="progress-label" id="progress-label-light">En cours…</div>
+    </div>
+
+    <div class="result-wrap" id="result-light">
+      <span class="result-icon">✅</span>
+      <div class="result-title">Conversion réussie !</div>
+      <button class="download-btn" id="download-btn-light">⬇ Télécharger</button>
+    </div>
+
+  </div>
+  <!-- ══ FIN PANEL LIGHT ══ -->
+
+
+  <!-- ══ PANEL PRO ══ -->
+  <div class="panel" data-panel="pro" id="panel-pro">
+
+    <div class="ffmpeg-init" id="ffmpeg-init">
+      <div class="ffmpeg-init-title">⚡ Initialisation de FFmpeg…</div>
+      <div class="progress-wrap visible">
+        <div class="progress-bar">
+          <div class="progress-fill" id="ffmpeg-init-fill"></div>
+        </div>
+        <div class="progress-label" id="ffmpeg-init-label">Chargement du moteur vidéo…</div>
+      </div>
+    </div>
+
+    <div class="drop-zone" id="drop-zone-pro" style="display:none">
+      <input type="file" id="file-input-pro" accept="video/*,audio/*,image/*">
+      <span class="drop-icon">🎬</span>
+      <div class="drop-title">Dépose ton fichier vidéo ou audio</div>
+      <div class="drop-sub">MP4, MKV, MOV, AVI, WEBM, MP3, WAV, FLAC…</div>
+    </div>
+
+    <div class="preview-wrap" id="preview-pro"></div>
+
+    <div class="file-info" id="file-info-pro">
+      <span class="file-info-icon" id="file-info-icon-pro">🎬</span>
+      <div>
+        <div class="file-info-name" id="file-info-name-pro"></div>
+        <div class="file-info-size" id="file-info-size-pro"></div>
+      </div>
+      <button class="file-info-close" id="reset-btn-pro" title="Changer de fichier">✕</button>
+    </div>
+
+    <div class="error-msg" id="error-pro"></div>
+
+    <div class="formats-section" id="formats-section-pro">
+      <div class="formats-title">Convertir en →</div>
+      <div class="formats-grid" id="formats-grid-pro"></div>
+    </div>
+
+    <div class="advanced-section" id="advanced-section-pro">
+      <div id="advanced-options-pro"></div>
+    </div>
+
+    <button class="convert-btn" id="convert-btn-pro">Convertir</button>
+
+    <div class="progress-wrap" id="progress-wrap-pro">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill-pro"></div>
+      </div>
+      <div class="progress-label" id="progress-label-pro">En cours…</div>
+    </div>
+
+    <div class="result-wrap" id="result-pro">
+      <span class="result-icon">✅</span>
+      <div class="result-title">Conversion réussie !</div>
+      <button class="download-btn" id="download-btn-pro">⬇ Télécharger</button>
+    </div>
+
+  </div>
+  <!-- ══ FIN PANEL PRO ══ -->
+
+</main>
+
+<script src="js/ffmpeg.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/converter-light.js"></script>
+<script src="js/converter-ffmpeg.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
