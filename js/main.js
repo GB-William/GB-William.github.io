@@ -85,6 +85,7 @@ const translations = {
 };
 
 function applyLanguage(lang) {
+  if (!translations[lang]) lang = 'fr';
   const t = translations[lang];
   document.documentElement.lang = lang;
 
