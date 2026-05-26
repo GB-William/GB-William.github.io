@@ -221,6 +221,8 @@ function showContactLimit() {
   div.appendChild(p2);
   div.appendChild(a);
   form.replaceWith(div);
+  div.setAttribute('tabindex', '-1');
+  div.focus();
 }
 
 const contactForm = document.getElementById('contact-form');
@@ -241,6 +243,12 @@ if (contactForm) {
       const message = document.getElementById('contact-message').value.trim();
 
       if (!name || !email || !subject || !message) {
+        feedback.textContent = t['contact.form.required'];
+        return;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
         feedback.textContent = t['contact.form.required'];
         return;
       }
@@ -269,6 +277,8 @@ if (contactForm) {
           div.appendChild(icon);
           div.appendChild(p);
           contactForm.replaceWith(div);
+          div.setAttribute('tabindex', '-1');
+          div.focus();
         } else {
           feedback.textContent = t['contact.form.error'];
           btn.disabled = false;
