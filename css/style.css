@@ -606,6 +606,8 @@
   .contact-item a:hover { color: var(--gold); }
 
   /* CONTACT FORM */
+  .honeypot { display: none; }
+
   .contact-divider {
     border: none;
     border-top: 0.5px solid rgba(201,168,76,0.1);
