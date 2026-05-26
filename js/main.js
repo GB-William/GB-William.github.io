@@ -172,3 +172,113 @@ if (burger && navLinks) {
     });
   });
 }
+
+// Contact form
+function getContactCounter() {
+  const currentMonth = new Date().toISOString().slice(0, 7);
+  try {
+    const raw = localStorage.getItem('contact_counter');
+    if (!raw) return { count: 0, month: currentMonth };
+    const data = JSON.parse(raw);
+    if (data.month !== currentMonth) return { count: 0, month: currentMonth };
+    return data;
+  } catch {
+    return { count: 0, month: currentMonth };
+  }
+}
+
+function incrementContactCounter() {
+  const counter = getContactCounter();
+  counter.count += 1;
+  localStorage.setItem('contact_counter', JSON.stringify(counter));
+}
+
+function isContactLimitReached() {
+  return getContactCounter().count >= 50;
+}
+
+function showContactLimit() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+  const lang = localStorage.getItem('lang') || 'fr';
+  const t = translations[lang] || translations.fr;
+  const div = document.createElement('div');
+  div.className = 'form-limit';
+  const icon = document.createElement('div');
+  icon.className = 'form-limit-icon';
+  icon.textContent = '✉';
+  const p1 = document.createElement('p');
+  p1.setAttribute('data-i18n', 'contact.form.limit');
+  p1.textContent = t['contact.form.limit'];
+  const p2 = document.createElement('p');
+  p2.setAttribute('data-i18n', 'contact.form.limitSub');
+  p2.textContent = t['contact.form.limitSub'];
+  const a = document.createElement('a');
+  a.href = 'mailto:stevens.wrc@gmail.com';
+  a.textContent = 'stevens.wrc@gmail.com';
+  div.appendChild(icon);
+  div.appendChild(p1);
+  div.appendChild(p2);
+  div.appendChild(a);
+  form.replaceWith(div);
+}
+
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  if (isContactLimitReached()) {
+    showContactLimit();
+  } else {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const lang = localStorage.getItem('lang') || 'fr';
+      const t = translations[lang] || translations.fr;
+      const btn = contactForm.querySelector('.btn-submit');
+      const feedback = document.getElementById('form-feedback');
+
+      const name    = document.getElementById('contact-name').value.trim();
+      const email   = document.getElementById('contact-email').value.trim();
+      const subject = document.getElementById('contact-subject').value.trim();
+      const message = document.getElementById('contact-message').value.trim();
+
+      if (!name || !email || !subject || !message) {
+        feedback.textContent = t['contact.form.required'];
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = t['contact.form.sending'];
+      feedback.textContent = '';
+
+      try {
+        const res = await fetch(contactForm.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ name, email, subject, message })
+        });
+
+        if (res.ok) {
+          incrementContactCounter();
+          const div = document.createElement('div');
+          div.className = 'form-success';
+          const icon = document.createElement('div');
+          icon.className = 'form-success-icon';
+          icon.textContent = '✓';
+          const p = document.createElement('p');
+          p.setAttribute('data-i18n', 'contact.form.success');
+          p.textContent = t['contact.form.success'];
+          div.appendChild(icon);
+          div.appendChild(p);
+          contactForm.replaceWith(div);
+        } else {
+          feedback.textContent = t['contact.form.error'];
+          btn.disabled = false;
+          btn.textContent = t['contact.form.send'];
+        }
+      } catch {
+        feedback.textContent = t['contact.form.error'];
+        btn.disabled = false;
+        btn.textContent = t['contact.form.send'];
+      }
+    });
+  }
+}
